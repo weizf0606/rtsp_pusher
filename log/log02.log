@@ -1,0 +1,33 @@
+in ?? () from /lib/libc.so.6
+#1  0x0000ffffb3949994 in DesensitizeModel::readImage2TensorAsNv12 (this=0xffffa8001c98, _bgr_mat=...)
+    at /shared_data/NN_OBB_CDS/CDS_Infer/J5/src/nn_cds.cpp:206
+#2  0x0000ffffb394bda8 in DesensitizeModel::modelInference (this=0xffffa8001c98, _img=..., _obstacles=...)
+    at /shared_data/NN_OBB_CDS/CDS_Infer/J5/src/nn_cds.cpp:689
+#3  0x0000ffffb43d9d90 in apa::ds_alg::DesensitizationAlg::ObstacleDetect (this=0xffffa8000cc0)
+    at /shared_data/NN_OBB_CDS/CDS_Project/CDS/src/DesensitizationAlgApi.cpp:247
+#4  0x0000aaaac0ecccec in ObstacleDetectionJob::CarmeraObstacleDetect (this=0xffffa8000bb0)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:132
+#5  0x0000aaaac0ecca88 in ObstacleDetectionJob::doLoop (this=0xffffa8000bb0, _msg=...)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:101
+#6  0x0000aaaac0ee2e48 in LoopJob<CDSMsg>::checkResult (this=0xffffa8000bb0, _msg=...)
+    at /APA_SOC/AD_SRV/DesensitizationService/include/DesensitizationServiceCommon.hpp:93
+#7  0x0000aaaac0edbc34 in apf::mission::MissionBase<CDSMsg>::runMission (this=0xffffa8000b70, _msg=...)
+    at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/MissionBase.h:512
+#8  0x0000aaaac0ed9b48 in apf::mission::MissionPool<CDSMsg>::ContiuneTask (_handle=..., _msg=...)
+    at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/Mission_Helper.h:626
+#9  0x0000aaaac0ed7034 in apf::mission::TaskPool<std::shared_ptr<apf::mission::MissionBase<CDSMsg> >, apf::mission::MissionPool<CDSMsg>, CDSMsg>::ContiuneTask (this=0xaaaac634d2a8 <g_CDS_working_thread+208>, _task=..., _msg=...) at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/Mission_Helper.h:556
+#10 0x0000aaaac0ed3b54 in apf::mission::TaskPool<std::shared_ptr<apf::mission::MissionBase<CDSMsg> >, apf::mission::MissionPool<CDSMsg>, CDSMsg>::Execute
+    (this=0xaaaac634d2a8 <g_CDS_working_thread+208>, _msg=0xffff4c000b70) at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/Mission_Helper.h:476
+#11 0x0000aaaac0ecd668 in CDSThread::onMessage (this=0xaaaac634d1d8 <g_CDS_working_thread>, _msg=...)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:306
+#12 0x0000aaaac0ed730c in apf::osa::ApfThread<CDSMsg>::run (this=0xaaaac634d1d8 <g_CDS_working_thread>)
+    at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/ApfThread.h:53
+#13 0x0000aaaac0ed3d60 in apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}::operator()() const (this=0xaaaac634d1d8 <g_CDS_working_thread>)
+    at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/ApfThread.h:36
+#14 0x0000aaaac0ee38f4 in std::__invoke_impl<void, apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}>(std::__invoke_other, apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}&&) (__f=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/invoke.h:60
+#15 0x0000aaaac0ee37dc in std::__invoke<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}>(std::__invoke_result&&, (apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}&&)...) (__fn=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/invoke.h:95
+#16 0x0000aaaac0ee3738 in std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) (this=0xaaaace924498) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:244
+#17 0x0000aaaac0ee3558 in std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> >::operator()() (this=0xaaaace924498)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:251
+#18 0x0000aaaac0ee274c in std::thread::_State_impl<std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> > >::_M_run()
+    (this=0xaaaace924490) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:195

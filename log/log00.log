@@ -1,0 +1,71 @@
+#0  0x0000ffffadccada8 in raise () from /lib/libc.so.6
+#1  0x0000ffffadcb0dd4 in abort () from /lib/libc.so.6
+#2  0x0000ffffadf93ce8 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/libstdc++.so.6
+#3  0x0000ffffadf9183c in ?? () from /usr/lib/libstdc++.so.6
+#4  0x0000ffffadf918a0 in std::terminate() () from /usr/lib/libstdc++.so.6
+#5  0x0000ffffadf91b90 in __cxa_throw () from /usr/lib/libstdc++.so.6
+#6  0x0000ffffae6a90f8 in YAML::as_if<float, void>::operator() (this=0xffffaa248aa0) at /APA_SOC/OSS/include/j5/yaml-cpp/node/impl.h:133
+#7  0x0000ffffae6a5784 in YAML::Node::as<float> (this=0xffffaa248bf8) at /APA_SOC/OSS/include/j5/yaml-cpp/node/impl.h:156
+#8  0x0000ffffae6a0c90 in YamlConfig::readConfiguration<float> (this=0xffffaa248e08, _config_name_1=..., _config_name_2=...)
+    at /shared_data/NN_OBB_CDS/CDS_Project/CDS/common/ReadYamlConfiguration.h:106
+#9  0x0000ffffae695000 in CDSProcess::readConfiguration (this=0xffffa4001d10, config_path=..., _camera_path=...)
+    at /shared_data/NN_OBB_CDS/CDS_Project/CDS/src/CDS.cpp:98
+#10 0x0000ffffae693dfc in CDSProcess::init (this=0xffffa4001d10, config_path=...) at /shared_data/NN_OBB_CDS/CDS_Project/CDS/src/CDS.cpp:29
+#11 0x0000ffffae6b7464 in apa::ds_alg::DesensitizationAlg::init (this=0xffffa4000cc0, _config_path=..., engine_path=...)
+    at /shared_data/NN_OBB_CDS/CDS_Project/CDS/src/DesensitizationAlgApi.cpp:342
+#12 0x0000aaaae5b9c668 in ObstacleDetectionJob::ObstacleDetectionJob(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>) (
+    this=0xffffa4000bb0, _interval=..., _timeout=...) at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:78
+#13 0x0000aaaae5b9e904 in __gnu_cxx::new_allocator<ObstacleDetectionJob>::construct<ObstacleDetectionJob, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(ObstacleDetectionJob *) (this=0xffffaa249370, __p=0xffffa4000bb0)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/ext/new_allocator.h:147
+#14 0x0000aaaae5b9e874 in std::allocator_traits<std::allocator<ObstacleDetectionJob> >::construct<ObstacleDetectionJob, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(std::allocator_traits<std::allocator<ObstacleDetectionJob> >::allocator_type &, ObstacleDetectionJob *) (__a=..., __p=0xffffa4000bb0) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/alloc_traits.h:484
+#15 0x0000aaaae5b9e7e0 in std::_Sp_counted_ptr_inplace<ObstacleDetectionJob, std::allocator<ObstacleDetectionJob>, (__gnu_cxx::_Lock_policy)2>::_Sp_counted_ptr_inplace<std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(std::allocator<ObstacleDetectionJob>) (
+    this=0xffffa4000ba0, __a=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:548
+#16 0x0000aaaae5b9e678 in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<ObstacleDetectionJob, std::allocator<ObstacleDetectionJob>, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(ObstacleDetectionJob *&, std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionJob> >) (this=0xffffaa249540, __p=@0xffffaa249538: 0x0, __a=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:679
+#17 0x0000aaaae5b9e59c in std::__shared_ptr<ObstacleDetectionJob, (__gnu_cxx::_Lock_policy)2>::__shared_ptr<std::allocator<ObstacleDetectionJob>, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionJob> >) (
+    this=0xffffaa249538, __tag=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:1344
+#18 0x0000aaaae5b9e504 in std::shared_ptr<ObstacleDetectionJob>::shared_ptr<std::allocator<ObstacleDetectionJob>, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionJob> >) (this=0xffffaa249538, __tag=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:359
+#19 0x0000aaaae5b9e240 in std::allocate_shared<ObstacleDetectionJob, std::allocator<ObstacleDetectionJob>, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(const std::allocator<ObstacleDetectionJob> &) (__a=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:702
+#20 0x0000aaaae5b9dfd4 in std::make_shared<ObstacleDetectionJob, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetectionMission()::<lambda()> >(void) () at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:718
+#21 0x0000aaaae5b9dcfc in apf::mission::CreateJob<ObstacleDetectionJob, std::chrono::duration<long int, std::ratio<1, 1000> >, ObstacleDetectionMission::ObstacleDetecti--Type <RET> for more, q to quit, c to continue without paging--
+onMission()::<lambda()> >(void) () at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/MissionBase.h:247
+#22 0x0000aaaae5b9d4a8 in ObstacleDetectionMission::ObstacleDetectionMission (this=0xffffa4000b70)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:299
+#23 0x0000aaaae5bb1580 in __gnu_cxx::new_allocator<ObstacleDetectionMission>::construct<ObstacleDetectionMission> (this=0xffffaa249670, __p=0xffffa4000b70)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/ext/new_allocator.h:147
+#24 0x0000aaaae5bb0d04 in std::allocator_traits<std::allocator<ObstacleDetectionMission> >::construct<ObstacleDetectionMission> (__a=..., __p=0xffffa4000b70)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/alloc_traits.h:484
+#25 0x0000aaaae5bafffc in std::_Sp_counted_ptr_inplace<ObstacleDetectionMission, std::allocator<ObstacleDetectionMission>, (__gnu_cxx::_Lock_policy)2>::_Sp_counted_ptr_inplace<>(std::allocator<ObstacleDetectionMission>) (this=0xffffa4000b60, __a=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:548
+#26 0x0000aaaae5bae9a8 in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<ObstacleDetectionMission, std::allocator<ObstacleDetectionMission>>(ObstacleDetectionMission*&, std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionMission> >) (this=0xffffaa249770, __p=@0xffffaa249768: 0x0, __a=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:679
+#27 0x0000aaaae5bad330 in std::__shared_ptr<ObstacleDetectionMission, (__gnu_cxx::_Lock_policy)2>::__shared_ptr<std::allocator<ObstacleDetectionMission>>(std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionMission> >) (this=0xffffaa249768, __tag=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr_base.h:1344
+#28 0x0000aaaae5babd74 in std::shared_ptr<ObstacleDetectionMission>::shared_ptr<std::allocator<ObstacleDetectionMission>>(std::_Sp_alloc_shared_tag<std::allocator<ObstacleDetectionMission> >) (this=0xffffaa249768, __tag=...)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:359
+#29 0x0000aaaae5ba9bb4 in std::allocate_shared<ObstacleDetectionMission, std::allocator<ObstacleDetectionMission>>(std::allocator<ObstacleDetectionMission> const&) (
+    __a=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:702
+#30 0x0000aaaae5ba70b4 in std::make_shared<ObstacleDetectionMission> ()
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/shared_ptr.h:718
+#31 0x0000aaaae5ba3b5c in apf::mission::CreateMission<CDSMsg, ObstacleDetectionMission> () at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/Mission_Helper.h:48
+#32 0x0000aaaae5b9d654 in CDSThread::produceMission (this=0xaaaaeb01c1d8 <g_CDS_working_thread>, _msg=...)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:315
+#33 0x0000aaaae5b9d5a4 in CDSThread::onMessage (this=0xaaaaeb01c1d8 <g_CDS_working_thread>, _msg=...)
+    at /APA_SOC/AD_SRV/DesensitizationService/src/CDSWorkingThread.cpp:305
+#34 0x0000aaaae5ba7258 in apf::osa::ApfThread<CDSMsg>::run (this=0xaaaaeb01c1d8 <g_CDS_working_thread>) at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/ApfThread.h:53
+#35 0x0000aaaae5ba3cac in apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}::operator()() const (this=0xaaaaeb01c1d8 <g_CDS_working_thread>)
+    at /APA_SOC/AP_Platform_SDK_ARM/include/LSP/ApfThread.h:36
+#36 0x0000aaaae5bb3840 in std::__invoke_impl<void, apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}>(std::__invoke_other, apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}&&) (__f=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/invoke.h:60
+#37 0x0000aaaae5bb3728 in std::__invoke<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}>(std::__invoke_result&&, (apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}&&)...) (__fn=...) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/bits/invoke.h:95
+#38 0x0000aaaae5bb3684 in std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) (
+    this=0xaaab083cf498) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:244
+#39 0x0000aaaae5bb34a4 in std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> >::operator()() (this=0xaaab083cf498)
+    at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:251
+#40 0x0000aaaae5bb2698 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<apf::osa::ApfThread<CDSMsg>::ApfThread()::{lambda()#1}> > >::_M_run() (
+    this=0xaaab083cf490) at /opt/gcc-ubuntu-9.3.0-2020.03-x86_64-aarch64-linux-gnu/aarch64-linux-gnu/include/c++/9/thread:195
+#41 0x0000ffffadfc461c in ?? () from /usr/lib/libstdc++.so.6
+--Type <RET> for more, q to quit, c to continue without paging--
+#42 0x0000ffffaf60c558 in ?? () from /lib/libpthread.so.0
+#43 0x0000ffffadd78ddc in ?? () from /lib/libc.so.6
